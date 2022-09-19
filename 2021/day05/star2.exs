@@ -18,8 +18,8 @@ defmodule Main do
     |> Regex.run(line, capture: :all_but_first)
   end
 
-  defp line_to_coord([x1, y1, x2, y2]), do:
-    [
+  defp line_to_coord([x1, y1, x2, y2]),
+    do: [
       {String.to_integer(x1), String.to_integer(y1)},
       {String.to_integer(x2), String.to_integer(y2)}
     ]
