@@ -36,12 +36,15 @@ defmodule Main do
   end
 
   defp explore(_, "end", path, _), do: [["end" | path]]
+
   defp explore(graph, current_node, path, already_visited) do
     case Map.get(graph, current_node) -- already_visited do
       [] ->
         []
+
       [^current_node] ->
         []
+
       next_caves ->
         Enum.flat_map(next_caves, fn node ->
           if String.upcase(current_node) == current_node do
